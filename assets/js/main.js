@@ -37,6 +37,32 @@ if(loginClose){
     })
 }
 
+/*=============== Quick View ===============*/
+const quickButton = document.querySelectorAll('.ri-eye-line'),
+      quickClose = document.getElementById('quick-close'),
+      quickContent = document.getElementById('quick-content');
+
+/*=================Quick SHOW================== */
+
+for (var a = 0; a < quickButton.length; a++) {    
+    quickButton[a].addEventListener('click', () =>{
+        quickContent.classList.add('show-quick')
+    });
+}
+// if(quickButton){
+//     quickButton.addEventListener('click', () =>{
+//         quickContent.classList.add('show-quick')
+//     })
+// }
+
+/*=================Quick HIDDEN================== */
+
+if(quickClose){
+    quickClose.addEventListener('click', () =>{
+        quickContent.classList.remove('show-quick')
+    })
+}
+
 /*=============== ADD SHADOW HEADER ===============*/
 const shadowHeader = () =>{
     const header = document.getElementById('header');
@@ -125,8 +151,6 @@ const scrollUp = () =>{
 }
 window.addEventListener('scroll', scrollUp)
 
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-
 
 /*=============== DARK LIGHT THEME ===============*/ 
 const themeButton = document.getElementById('theme-button')
@@ -152,17 +176,14 @@ themeButton.addEventListener('click', () =>{
     localStorage.setItem('selectedItem', getCurrentIcon())
 })
 
-/*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({
-    origin: 'top',
-    distance:'60px',
-    duration: 2500,
-    delay: 400,
-    //reset: true, // Animations repeat
-})
 
-sr.reveal('.home_data, .featured_container, .new_container, .join_data, .testimonial_container, .footer');
-sr.reveal('.home_images', {delay: 600});
-sr.reveal('.services_card', {interval: 100});
-sr.reveal('.discount_data', {origin: 'left'});
-sr.reveal('.discount_images', {origin: 'right'});
+
+
+
+const cartButton = document.getElementById('cart-button');
+
+if(cartButton){
+    cartButton.addEventListener('click', () =>{
+        window.location.href = "cart.html";
+    })
+}
