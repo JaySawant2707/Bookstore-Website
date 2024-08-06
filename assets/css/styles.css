@@ -1162,6 +1162,10 @@ row-gap: .5rem;
   margin: 2.5rem 0 2rem;
 }
 
+.buy_des_data p{
+	text-align: justify;
+}
+
 /*---Book Reviews---*/
 .buy_book_reviews{
   grid-template-columns: 30% 70%;
